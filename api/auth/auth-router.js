@@ -89,7 +89,7 @@ router.post('/login', checkUsernameExists, async (req, res, next) => {
  */
 router.get('/logout', async (req, res, next) => {
   try{
-    if(req.session.user){
+    if(req.session){
       res.session.destroy((err) => {
         if(err){
           res.status(200).json({
