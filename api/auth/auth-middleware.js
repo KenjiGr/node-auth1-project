@@ -73,7 +73,7 @@ function checkPasswordLength(req, res, next) {
     if(password > 3){
       next()
     }else{
-      return next({status: 401, message: "Password must be longer than 3 chars"});
+      return next({status: 422, message: "Password must be longer than 3 chars"});
     }
   }catch (err){
     next(err)
