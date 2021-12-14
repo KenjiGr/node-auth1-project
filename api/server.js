@@ -24,9 +24,10 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 server.use(session({
-  name: 'chocolatechip',
+  name: 'serversession',
   secret: process.env.SESSION_SECRET || 'shh',
   cookie: {
+    name: 'chocolatechip',
     maxAge: 1000 * 60 * 60,
     secure: false,
     httpOnly: false
